@@ -51,18 +51,24 @@ export const authOptions: NextAuthOptions = {
       name: "Credentials",
       credentials: {
         username: { label: "Username", type: "text", placeholder: "jsmith" },
-        password: { label: "Password", type: "password" }
+        password: { label: "Password", type: "password" },
       },
       authorize(credentials) {
-        if(env.NEXTAUTH_DEMO_USERNAME === credentials?.username && env.NEXTAUTH_DEMO_PASSWORD === credentials?.password) {
-          const user = { id: "1", name: "J Smith", email: "jsmith@example.com" }
-          return user
+        if (
+          env.NEXTAUTH_DEMO_USERNAME === credentials?.username &&
+          env.NEXTAUTH_DEMO_PASSWORD === credentials?.password
+        ) {
+          const user = {
+            id: "1",
+            name: "J Smith",
+            email: "jsmith@example.com",
+          };
+          return user;
+        } else {
+          return null;
         }
-        else {
-          return null
-        }
-      }
-    })
+      },
+    }),
   ],
 };
 
