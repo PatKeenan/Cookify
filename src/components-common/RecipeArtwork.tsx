@@ -14,32 +14,32 @@ import {
 } from "@/components-common/ui";
 
 // MOCK DATA
-import type { Album } from "@/components-core/HomeContainer";
-import { playlists } from "@/components-core/HomeContainer";
+import { cookbooks } from "@/components-core/home-container/HomeContainer";
+import type { Recipe } from "@/types";
 
-interface AlbumArtworkProps extends React.HTMLAttributes<HTMLDivElement> {
-  album: Album;
+interface RecipeArtworkProps extends React.HTMLAttributes<HTMLDivElement> {
+  recipe: Recipe;
   aspectRatio?: "portrait" | "square";
   width?: number;
   height?: number;
 }
 
-export function AlbumArtwork({
-  album,
+export function RecipeArtwork({
+  recipe,
   aspectRatio = "portrait",
   width,
   height,
   className,
   ...props
-}: AlbumArtworkProps) {
+}: RecipeArtworkProps) {
   return (
     <div className={cn("space-y-3", className)} {...props}>
       <ContextMenu>
         <ContextMenuTrigger>
           <div className="overflow-hidden rounded-md">
             <Image
-              src={album.cover}
-              alt={album.name}
+              src={recipe.cover}
+              alt={recipe.name}
               width={width}
               height={height}
               className={cn(
@@ -52,15 +52,15 @@ export function AlbumArtwork({
         <ContextMenuContent className="w-40">
           <ContextMenuItem>Add to Library</ContextMenuItem>
           <ContextMenuSub>
-            <ContextMenuSubTrigger>Add to Playlist</ContextMenuSubTrigger>
+            <ContextMenuSubTrigger>Add to Cookbook</ContextMenuSubTrigger>
             <ContextMenuSubContent className="w-48">
               <ContextMenuItem>
                 <PlusCircledIcon className="mr-2 h-4 w-4" />
-                New Playlist
+                New Cookbook
               </ContextMenuItem>
               <ContextMenuSeparator />
-              {playlists.map((playlist) => (
-                <ContextMenuItem key={playlist}>
+              {cookbooks.map((cookbook) => (
+                <ContextMenuItem key={cookbook}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -73,7 +73,7 @@ export function AlbumArtwork({
                   >
                     <path d="M21 15V6M18.5 18a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM12 12H3M16 6H3M12 18H3" />
                   </svg>
-                  {playlist}
+                  {cookbook}
                 </ContextMenuItem>
               ))}
             </ContextMenuSubContent>
@@ -88,8 +88,8 @@ export function AlbumArtwork({
         </ContextMenuContent>
       </ContextMenu>
       <div className="space-y-1 text-sm">
-        <h3 className="font-medium leading-none">{album.name}</h3>
-        <p className="text-xs text-muted-foreground">{album.artist}</p>
+        <h3 className="font-medium leading-none">{recipe.name}</h3>
+        <p className="text-xs text-muted-foreground">{recipe.artist}</p>
       </div>
     </div>
   );
