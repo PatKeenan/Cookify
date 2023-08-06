@@ -1,11 +1,11 @@
 import { Layout, PageTitle } from "@/components-common";
 import React from "react";
 
-export const BrowseContainer = () => {
+export const RandomContainer = () => {
   return (
-    <Layout activeNav="browse">
+    <Layout activeNav="random">
       <PageTitle
-        title="Browse"
+        title="Random"
         subtitle="Find recipes by category, cuisine, and more."
       />
     </Layout>

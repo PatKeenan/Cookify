@@ -3,3 +3,5 @@ export interface Recipe {
   artist: string;
   cover: string;
 }
+
+export type NavItems = 'cookNow' | 'browse' | 'random' | 'cookbooks' | 'recipes' | 'madeForYou' | 'chefs'

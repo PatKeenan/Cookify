@@ -2,19 +2,16 @@ import React from "react";
 import { Separator } from "@/components-common/ui";
 import { MadeForYouList } from "@/components-feat/MadeForYouList";
 import { CookNowRecipesList } from "@/components-feat/CookNowRecipesList";
+import { PageTitle } from "@/components-common";
 
 export const ExploreView = () => {
   return (
     <React.Fragment>
-      <div className="flex items-center justify-between">
-        <div className="space-y-1">
-          <h2 className="text-2xl font-semibold tracking-tight">Cook Now</h2>
-          <p className="text-sm text-muted-foreground">
-            Top picks for you. Updated daily.
-          </p>
-        </div>
-      </div>
-      <Separator className="my-4" />
+      <PageTitle
+        title="Cook Now"
+        subtitle="Top picks for you. Updated daily."
+      />
+
       <div className="relative">
         <CookNowRecipesList />
       </div>

@@ -12,7 +12,7 @@ import { Layout } from "@/components-common/Layout";
 
 export const HomeContainer = () => {
   return (
-    <Layout>
+    <Layout activeNav="cookNow">
       <Tabs defaultValue="explore" className="h-full space-y-6">
         <div className="space-between flex items-center">
           <TabsList>
