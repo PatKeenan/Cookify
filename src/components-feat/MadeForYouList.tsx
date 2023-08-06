@@ -3,7 +3,7 @@ import { RecipeArtwork } from "@/components-common/RecipeArtwork";
 import { ScrollArea, ScrollBar } from "@/components-common/ui";
 
 export const MadeForYouList = () => (
-  <React.Suspense fallback="Loading...">
+  <React.Suspense fallback={"Loading..."}>
     <MadeForYouListInner />
   </React.Suspense>
 );

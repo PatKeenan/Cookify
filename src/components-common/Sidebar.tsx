@@ -10,7 +10,7 @@ type SidebarProps = {
 
 export const Sidebar: React.FC<SidebarProps> = ({ activeNav }) => {
   return (
-    <aside className="hidden pb-12 lg:block">
+    <aside className="hidden h-full min-h-full flex-auto flex-col overflow-auto pb-12 lg:flex">
       <div className="space-y-4 py-4">
         <div className="px-3 py-2">
           <h2 className="mb-2 px-4 text-lg font-semibold tracking-tight">

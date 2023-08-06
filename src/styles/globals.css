@@ -72,7 +72,13 @@
   * {
     @apply border-border;
   }
+  html {
+    @apply min-h-screen overflow-hidden bg-background text-foreground;
+  }
   body {
-    @apply bg-background text-foreground;
+    @apply flex min-h-screen flex-auto flex-col bg-background text-foreground;
+  }
+  #__next {
+    @apply flex h-full w-full flex-auto flex-grow flex-col;
   }
 }

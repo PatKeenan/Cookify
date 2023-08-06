@@ -4,7 +4,7 @@ import type { Recipe } from "@/types";
 import React from "react";
 
 export const CookNowRecipesList = () => (
-  <React.Suspense fallback="Loading...">
+  <React.Suspense fallback={"Loading..."}>
     <CookNowRecipesListInner />
   </React.Suspense>
 );
