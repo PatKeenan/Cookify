@@ -4,4 +4,11 @@ export interface Recipe {
   cover: string;
 }
 
-export type NavItems = 'cookNow' | 'browse' | 'random' | 'cookbooks' | 'recipes' | 'madeForYou' | 'chefs'
+export type NavItems =
+  | "cookNow"
+  | "browse"
+  | "random"
+  | "cookbooks"
+  | "recipes"
+  | "madeForYou"
+  | "chefs";
