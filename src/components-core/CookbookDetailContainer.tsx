@@ -1,5 +1,12 @@
-import { FullWidth, Layout, PageTitle } from "@/components-common";
-import { Button } from "@/components-common/ui";
+import {
+  FullWidth,
+  Layout,
+  PageTitle,
+  RecipeArtwork,
+  StarSvg,
+} from "@/components-common";
+import { Button, Separator } from "@/components-common/ui";
+import { madeForYouRecipes } from "@/components-feat/MadeForYouList";
 import { cn } from "@/lib-client/utils";
 import { randomColor } from "@/lib-client/utils/randomColor";
 import { Slot } from "@radix-ui/react-slot";
@@ -59,13 +66,62 @@ export const CookbookDetailContainer = () => {
           </div>
         </div>
       </FullWidth>
-      {/*  <div>
-        <Button variant="outline">
-          <ArrowLeftIcon className="mr-2 h-4 w-4" />
-          Back
-        </Button>
+      <div className="mt-2 w-full">
+        <h2 className="text-2xl font-semibold tracking-tight">Recipes</h2>
+        {/* <div className="flex justify-between">
+          <p className="ml-4 mt-5 text-sm text-muted-foreground">Name</p>
+          <p className="mr-[5.25rem] mt-3 text-sm text-muted-foreground">
+            Rating
+          </p>
+        </div> */}
+        <Separator className="mt-1" />
+
+        {/* <ul className="py-2">
+          <li className="px-4 py-2 hover:bg-muted">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="">Recipe Name</p>
+                <p className="text-sm text-muted-foreground">
+                  Recipe Description
+                </p>
+              </div>
+              <div>
+                <div className="flex space-x-0.5">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <StarSvg key={i} filled={i == 4 ? false : true} />
+                  ))}
+                </div>
+                <p className="mt-0.5 text-xs text-muted-foreground">
+                  (2,000 reviews)
+                </p>
+              </div>
+            </div>
+          </li>
+        </ul> */}
+
+        <div className="mt-4 grid w-full grid-cols-2 gap-4 overflow-x-hidden pb-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+          {madeForYouRecipes.map((recipe) => (
+            <div
+              key={recipe.name}
+              className="flex h-[250px] flex-auto flex-col lg:h-[200px]"
+            >
+              <div className="w-full flex-grow overflow-hidden rounded-md">
+                <Image
+                  src={recipe.cover}
+                  alt={recipe.name}
+                  width={200}
+                  height={200}
+                  className={cn("h-full w-full object-cover")}
+                />
+              </div>
+              <div className="mt-2 flex-shrink-0 space-y-1 text-sm">
+                <h3 className="font-medium leading-none">{recipe.name}</h3>
+                <p className="text-xs text-muted-foreground">{recipe.artist}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-      <PageTitle title="Cookbook Name" /> */}
     </Layout>
   );
 };

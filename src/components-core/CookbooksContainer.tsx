@@ -32,9 +32,9 @@ export const CookbooksContainer = () => {
               <RecipeArtwork
                 recipe={recipe}
                 className="w-full"
-                aspectRatio="portrait"
+                aspectRatio="square"
                 width={250}
-                height={330}
+                height={250}
               />
             </Link>
           ))}
